@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPak - Digital Marketing & E-commerce Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-yellow-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #FFEB3B, #FFC107);
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* New Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+        .animate-delay-1 { animation-delay: 0.2s; }
+        .animate-delay-2 { animation-delay: 0.4s; }
+        .animate-delay-3 { animation-delay: 0.6s; }
+        .animate-delay-4 { animation-delay: 0.8s; }
+        
+        .fade-in-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        
+        #whatsapp-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header Section -->
+    <header id="main-header" class="bg-black text-white shadow-xl py-4 px-6 fixed w-full z-20 transition-all duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+    <h1 class="text-2xl font-extrabold">
+        <span class="text-yellow-gradient">Tech</span><span class="text-white">Pak</span>
+    </h1>
+</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-yellow-400 transition-colors">Home</a>
+                <a href="#services" class="hover:text-yellow-400 transition-colors">Services</a>
+                <a href="#about" class="hover:text-yellow-400 transition-colors">About Us</a>
+                <a href="#testimonials" class="hover:text-yellow-400 transition-colors">Testimonials</a>
+                <a href="Techpak_query.html" class="bg-yellow-400 text-gray-900 font-bold py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:scale-105">Contact Us</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 z-50 p-6 flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu-button" class="absolute top-4 right-4 text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <a href="index.html" class="text-white text-3xl font-bold hover:text-yellow-400 transition-colors">Home</a>
+        <a href="#services" class="text-white text-3xl font-bold hover:text-yellow-400 transition-colors">Services</a>
+        <a href="#about" class="text-white text-3xl font-bold hover:text-yellow-400 transition-colors">About Us</a>
+        <a href="#testimonials" class="text-white text-3xl font-bold hover:text-yellow-400 transition-colors">Testimonials</a>
+        <a href="Techpak_query.html" class="bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 text-xl">Contact Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        
+        <!-- Hero Section -->
+        <section id="home" class="bg-gray-800 text-center py-16 px-6 sm:py-24">
+            <div class="container mx-auto">
+                <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-white animate-fadeInUp">
+                    <span class="text-yellow-gradient">Power Your Brand</span> with TechPak
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto animate-fadeInUp animate-delay-1">
+                    Your partner for innovative digital marketing and e-commerce solutions that drive growth.
+                </p>
+                <a href="#services" class="mt-8 inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-delay-2">
+                    Explore Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 px-6 bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">Our Core Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <a href="social_media_marketing.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Social Media Marketing</h3>
+                        <p class="text-gray-400">Engage your audience and build brand loyalty on all major social platforms.</p>
+                    </a>
+                    <!-- Service Card 2 -->
+                    <a href="meta_ads.html.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Meta Ads</h3>
+                        <p class="text-gray-400">Highly targeted advertising campaigns to maximize your return on ad spend.</p>
+                    </a>
+                    <!-- Service Card 3 -->
+                    <a href="youtube_google_ads.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Google & YouTube Ads</h3>
+                        <p class="text-gray-400">Reach customers actively searching for your products and services.</p>
+                    </a>
+                    <!-- Service Card 4 -->
+                    <a href="shopify_development.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Shopify Development</h3>
+                        <p class="text-gray-400">Build a robust and scalable e-commerce store with custom themes and features.</p>
+                    </a>
+                    <!-- Service Card 5 -->
+                    <a href="wordpress_development.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">WordPress Development</h3>
+                        <p class="text-gray-400">Create a powerful, flexible, and responsive website that stands out.</p>
+                    </a>
+                    <!-- Service Card 6 -->
+                    <a href="graphic_designing.html" class="service-card p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700 hover:border-yellow-400 transition-colors fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Graphic Designing</h3>
+                        <p class="text-gray-400">Captivating visuals that tell your brand story and leave a lasting impression.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="py-16 px-6 bg-gray-800">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">About TechPak</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    We are a team of passionate digital strategists, designers, and developers dedicated to helping businesses succeed in the online world. Our mission is to provide cutting-edge solutions that deliver real, measurable results.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="bg-gray-700 rounded-xl p-6 shadow-lg fade-in-on-scroll">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Our Vision</h3>
+                        <p class="text-gray-300">To be the trusted partner for brands seeking to dominate their digital landscape.</p>
+                    </div>
+                    <div class="bg-gray-700 rounded-xl p-6 shadow-lg fade-in-on-scroll animate-delay-1">
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Our Mission</h3>
+                        <p class="text-gray-300">To craft innovative digital strategies that connect brands with their audience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 px-6 bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                   <!-- Testimonial Card 1 -->
+<div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 fade-in-on-scroll">
+    <p class="text-lg text-gray-300 italic mb-4">"TechPak built our Shopify store exactly the way we envisioned. Their team made the whole process seamless and efficient."</p>
+    <p class="font-semibold text-yellow-400">- Ali Raza, CEO of Pak Bazaar</p>
+</div>
+
+<!-- Testimonial Card 2 -->
+<div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 fade-in-on-scroll animate-delay-1">
+    <p class="text-lg text-gray-300 italic mb-4">"TechPak's ad campaigns helped me boost my sales within weeks. Very professional team — highly recommended!"</p>
+    <p class="font-semibold text-yellow-400">- Ahmed Nazeer</p>
+</div>
+
+<!-- Testimonial Card 3 -->
+<div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 fade-in-on-scroll animate-delay-2">
+    <p class="text-lg text-gray-300 italic mb-4">"I needed a blogging website and TechPak delivered beautifully. I loved their service and smooth communication."</p>
+    <p class="font-semibold text-yellow-400">- Uzma Khalid, Freelancer</p>
+</div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-6 bg-gray-800 text-center">
+            <div class="container mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Have a project in mind or a question for us? We'd love to hear from you.
+                </p>
+                <!-- New button to replace the form -->
+                <a href="Techpak_query.html" class="inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    Write Your Query
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WhatsApp FAB -->
+  <a href="https://wa.me/447400706051" id="whatsapp-button" class="fixed bottom-4 right-4 z-50">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 200 200" fill="currentColor">
+      <path fill="#b3b3b3" d="m54.532 138.45 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.523h.023c33.707 0 61.139-27.426 61.153-61.135.006-16.335-6.349-31.696-17.895-43.251A60.75 60.75 0 0 0 87.94 25.983c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.558zm-40.811 23.544L24.16 123.88c-6.438-11.154-9.825-23.808-9.821-36.772.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954zm0 0"></path>
+      <path fill="#fff" d="m12.966 161.238 10.439-38.114a73.42 73.42 0 0 1-9.821-36.772c.017-40.556 33.021-73.55 73.578-73.55 19.681.01 38.154 7.669 52.047 21.572s21.537 32.383 21.53 52.037c-.018 40.553-33.027 73.553-73.578 73.553h-.032c-12.313-.005-24.412-3.094-35.159-8.954z"></path>
+      <path fill="#25D366" d="M87.184 25.227c-33.733 0-61.166 27.423-61.178 61.13a60.98 60.98 0 0 0 9.349 32.535l1.455 2.312-6.179 22.559 23.146-6.069 2.235 1.324c9.387 5.571 20.15 8.518 31.126 8.524h.023c33.707 0 61.14-27.426 61.153-61.135a60.75 60.75 0 0 0-17.895-43.251 60.75 60.75 0 0 0-43.235-17.929z"></path>
+      <path fill="#fff" fill-rule="evenodd" d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647"></path>
+    </svg>
+  </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 px-6 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 TechPak. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        closeMenuButton.addEventListener('click', toggleMobileMenu);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.getElementById('main-header').offsetHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('bg-gray-800', 'border-gray-700', 'shadow-md');
+                mainHeader.classList.remove('bg-black', 'border-gray-800', 'shadow-xl');
+            } else {
+                mainHeader.classList.remove('bg-gray-800', 'border-gray-700', 'shadow-md');
+                mainHeader.classList.add('bg-black', 'border-gray-800', 'shadow-xl');
+            }
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+    </script>
+</body>
+</html>

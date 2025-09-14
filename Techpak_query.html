@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techpak - Contact Us</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* A dark, professional theme for a tech company, with a touch of accent color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #040D1B; /* Deep, dark blue for the tech aesthetic */
+  #whatsapp-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <!-- Main Form Container -->
+    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-3xl shadow-2xl w-full max-w-2xl backdrop-blur-sm">
+
+        <!-- Form Heading -->
+        <h1 class="text-4xl font-extrabold text-white mb-6 text-center tracking-tight">
+            Get in Touch with Techpak
+        </h1>
+        <p class="text-gray-300 text-center mb-8 max-w-md mx-auto">
+            Fill out the form below and we'll get back to you as soon as possible.
+        </p>
+
+        <!-- Form -->
+        <form id="contactForm" class="space-y-6">
+
+            <!-- Name Field -->
+            <div>
+                <label for="name" class="block text-base font-medium text-white mb-2">
+                    Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Enter your full name"
+                    class="w-full rounded-xl border border-gray-700 bg-gray-800 text-white p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                />
+            </div>
+
+            <!-- Contact & Email Fields (side by side on larger screens) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Contact (Whatsapp) Field -->
+                <div>
+                    <label for="contact" class="block text-base font-medium text-white mb-2">
+                        Contact (Whatsapp) <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="contact"
+                        name="contact"
+                        required
+                        placeholder="e.g., +92 300 1234567"
+                        class="w-full rounded-xl border border-gray-700 bg-gray-800 text-white p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+                <!-- Email Field -->
+                <div>
+                    <label for="email" class="block text-base font-medium text-white mb-2">
+                        Email <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="yourname@example.com"
+                        class="w-full rounded-xl border border-gray-700 bg-gray-800 text-white p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div>
+                <label class="block text-base font-medium text-white mb-2">
+                    Select services <span class="text-red-500">*</span>
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <!-- Service Checkboxes -->
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Shopify" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Shopify</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Wordpress" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Wordpress</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Graphic Designing" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Graphic Designing</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Meta Ads" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Meta Ads</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Google Ads" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Google Ads</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="services" value="Social Media Marketing" class="form-checkbox h-5 w-5 text-indigo-500 rounded border-gray-600 focus:ring-indigo-500">
+                        <span class="ml-2 text-gray-300">Social Media Marketing</span>
+                    </label>
+                </div>
+                <div id="serviceError" class="text-sm text-red-400 mt-2 hidden">
+                    Please select at least one service.
+                </div>
+            </div>
+
+            <!-- Query Field -->
+            <div>
+                <label for="query" class="block text-base font-medium text-white mb-2">
+                    Enter your query <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                    id="query"
+                    name="query"
+                    rows="5"
+                    required
+                    placeholder="Tell us more about your project and how we can help..."
+                    class="w-full rounded-xl border border-gray-700 bg-gray-800 text-white p-3 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm resize-none"
+                ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center">
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="w-full sm:w-auto px-8 py-3 border border-transparent text-base font-semibold rounded-xl shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+                >
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+ <!-- WhatsApp Button -->
+    <<a href="https://wa.me/+447400706051" id="whatsapp-button" class="bg-green-500 text-white rounded-full p-4 shadow-xl hover:bg-green-600 focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12.001 22.955l.004-.001c-5.918-.002-10.718-4.802-10.72-10.72-.001-2.92.511-5.65 1.5-8.08L2 22l4.89-1.34c2.253 1.258 4.908 1.942 7.711 1.944h.001z" fill="none" stroke="white" stroke-width="1.5"></path>
+        <path d="M12.001 22.955l.004-.001c-5.918-.002-10.718-4.802-10.72-10.72-.001-2.92.511-5.65 1.5-8.08L2 22l4.89-1.34c2.253 1.258 4.908 1.942 7.711 1.944h.001zM12.001 22.955l.004-.001c-5.918-.002-10.718-4.802-10.72-10.72-.001-2.92.511-5.65 1.5-8.08L2 22l4.89-1.34c2.253 1.258 4.908 1.942 7.711 1.944h.001z" stroke="#000000" stroke-width="1.5"></path>
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.708.455 3.32 1.272 4.74l-1.077 3.868 3.868-1.077C8.68 21.545 10.292 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="#25D366"></path>
+        <path d="M17.55 15.653c-.1-.17-.37-.27-.77-.47s-2.45-1.21-2.83-1.34c-.37-.13-.65-.2-.93.2-.27.4-.7.5-.96.47-2.31-1.1-3.83-2.58-5.32-5.06-.27-.45-.03-.7-.2-.86.15-.15.35-.4.5-.6.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.5-.07-.12-.47-1.12-.65-1.53-.17-.4-.35-.35-.5-.35-.15 0-.32 0-.5.2-.2.2-.75.75-.75 1.83.0 1.08.77 2.11 1.1 2.53.33.42 2.12 3.23 5.06 4.43 2.94 1.2 3.51.93 4.16.86.65-.07 1.5-.6 1.7-.9.2-.3.17-.5.12-.6z" fill="#FFFFFF"></path>
+    </svg>
+</a>
+
+
+    <!-- JavaScript to handle form submission and open email client -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const form = event.target;
+            const servicesCheckboxes = form.querySelectorAll('input[name="services"]');
+            const serviceError = document.getElementById('serviceError');
+
+            // Check if at least one service checkbox is selected
+            const isServiceSelected = Array.from(servicesCheckboxes).some(checkbox => checkbox.checked);
+
+            if (!isServiceSelected) {
+                serviceError.classList.remove('hidden');
+                return;
+            } else {
+                serviceError.classList.add('hidden');
+            }
+
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const email = document.getElementById('email').value;
+            const query = document.getElementById('query').value;
+            const selectedServices = Array.from(servicesCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value)
+                .join(', ');
+
+            // Create a subject line and body for the email
+            const subject = encodeURIComponent(`New Inquiry from Techpak Website by ${name}`);
+            const body = encodeURIComponent(
+                `Name: ${name}\n` +
+                `Contact (Whatsapp): ${contact}\n` +
+                `Email: ${email}\n` +
+                `Services Interested In: ${selectedServices}\n\n` +
+                `Query:\n${query}`
+            );
+
+            // Create the mailto link.
+            // Replace 'your-email@example.com' with your actual email address.
+            const mailtoLink = `mailto:digimarketershaheer@gmail.com?subject=${subject}&body=${body}`;
+
+            // Open the user's email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
